@@ -1,0 +1,14 @@
+{
+  "hosting": {
+    "site": "raghav-restaurant-e8ad6",
+    "public": "build/raghav",
+    "predeploy": ["bash scripts/build_raghav_web.sh"],
+    "ignore": ["**/.*", "**/node_modules/**"],
+    "headers": [
+      {
+        "source": "**",
+        "headers": [{"key": "Cache-Control", "value": "no-cache"}]
+      }
+    ]
+  }
+}

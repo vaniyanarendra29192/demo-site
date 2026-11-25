@@ -23,6 +23,13 @@
             "program": "lib/main.dart",
             "deviceId": "chrome",
             "flutterMode": "release"
+        },
+        {
+            "name": "Raghav Restaurant (Chrome)",
+            "request": "launch",
+            "type": "dart",
+            "program": "lib/raghav_main.dart",
+            "deviceId": "chrome"
         }
     ]
 }
