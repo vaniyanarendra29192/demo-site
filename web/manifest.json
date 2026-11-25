@@ -3,10 +3,10 @@
     "short_name": "The Neelkanth Heritage",
     "start_url": ".",
     "display": "standalone",
-    "background_color": "#0175C2",
-    "theme_color": "#0175C2",
-    "description": "The Neelkanth Heritage web app.",
-    "orientation": "portrait-primary",
+    "background_color": "#faf5ef",
+    "theme_color": "#762c1b",
+    "description": "2 and 3 BHK residences and high-street shops in Narol, Ahmedabad.",
+    "orientation": "any",
     "prefer_related_applications": false,
     "icons": [
         {

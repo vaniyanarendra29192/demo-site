@@ -15,6 +15,12 @@ class AppRouter extends RootStackRouter {
     ..._initialRoute,
     ..._sharedRoutes,
     ..._siteRoutes,
+    for (final page in HeritagePage.values.skip(1))
+      NamedRouteDef(
+        name: 'Heritage-${page.name}',
+        path: page.path,
+        builder: (_, __) => HeritageSite(page: page),
+      ),
   ];
 
   // ==================== CONFIGURATION ====================
@@ -25,6 +31,7 @@ class AppRouter extends RootStackRouter {
   List<CustomRoute> get _initialRoute => [
     CustomRoute(
       page: HomeRoute.page,
+      path: '/',
       initial: true,
       transitionsBuilder: TransitionsBuilders.noTransition,
       duration: const Duration(milliseconds: 2),

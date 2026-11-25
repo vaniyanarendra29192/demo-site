@@ -17,20 +17,9 @@
   <base href="$FLUTTER_BASE_HREF">
 
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta content="IE=Edge" http-equiv="X-UA-Compatible">
-  <meta name="description" content="The Neelkanth Heritage web app.">
-
-  <!--
-    Uncomment the tag below to lay the app out underneath the parts of the
-    screen that the device obstructs, such as a display cutout, the rounded
-    corners of the screen, or a home indicator.
-
-    Without it, the browser keeps the app clear of them, and `SafeArea` and
-    `MediaQuery.paddingOf` report no padding. With it, the app covers the whole
-    screen, and it is up to the app to keep its own content out of the way,
-    which is what `SafeArea` is for.
-  -->
-  <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"> -->
+  <meta name="description" content="Explore 2 and 3 BHK residences, floor plans, amenities and shops at The Neelkanth Heritage in Narol, Ahmedabad.">
 
   <!-- iOS meta tags & icons -->
   <meta name="mobile-web-app-capable" content="yes">
@@ -43,16 +32,60 @@
 
   <title>The Neelkanth Heritage</title>
   <link rel="manifest" href="manifest.json">
+  <style>
+    #heritage-loading {
+      position: fixed;
+      inset: 0;
+      z-index: 1000;
+      display: grid;
+      place-content: center;
+      justify-items: center;
+      gap: 1rem;
+      padding: 1.5rem;
+      overflow: auto;
+      background: #faf5ef;
+      color: #762c1b;
+      font: 1rem/1.5 system-ui, sans-serif;
+      text-align: center;
+    }
+
+    #heritage-loading img {
+      display: block;
+      width: min(23rem, 82vw);
+      max-height: 48vh;
+      height: auto;
+      object-fit: contain;
+    }
+
+    .loading-spinner {
+      width: 1.5rem;
+      height: 1.5rem;
+      border: 3px solid #e9dfd5;
+      border-top-color: #762c1b;
+      border-radius: 50%;
+      animation: loading-spin .8s linear infinite;
+    }
+
+    @keyframes loading-spin {
+      to { transform: rotate(360deg); }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .loading-spinner { animation: none; }
+    }
+  </style>
 </head>
 <body>
-  <!--
-    You can customize the "flutter_bootstrap.js" script.
-    This is useful to provide a custom configuration to the Flutter loader
-    or to give the user feedback during the initialization process.
-
-    For more details:
-    * https://docs.flutter.dev/platform-integration/web/initialization
-  -->
+  <div id="heritage-loading">
+    <img src="heritage-loading-logo.jpg" alt="The Neelkanth Heritage">
+    <span class="loading-spinner" aria-hidden="true"></span>
+    <span role="status">Loading the website…</span>
+  </div>
+  <script>
+    window.addEventListener('flutter-first-frame', () => {
+      document.getElementById('heritage-loading').remove();
+    }, { once: true });
+  </script>
   <script src="flutter_bootstrap.js" async></script>
 </body>
 </html>

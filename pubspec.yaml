@@ -61,6 +61,7 @@ flutter:
     - assets/brand/NotoSansGujarati-OFL.txt
     - assets/brand/NotoSansDevanagari-OFL.txt
     - assets/site/
+    - assets/heritage/
   fonts:
     - family: Playfair Display
       fonts:
